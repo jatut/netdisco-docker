@@ -51,9 +51,9 @@ Other username, password, database connection, and file locations, can all be se
  * Docker 20.10.0 (Linux) or Docker Desktop 3.3.0 (Win/Mac) 
  * docker-compose 1.28
 
-## Getting Support
+## Получение поддержки
 
-We have several other pages with tips for [understanding and troubleshooting Netdisco](https://github.com/netdisco/netdisco/wiki/Troubleshooting), [tips and tricks for specific platforms](https://github.com/netdisco/netdisco/wiki/Vendor-Tips), and [all the configuration options](https://github.com/netdisco/netdisco/wiki/Configuration).
+У нас есть несколько других страниц с советами по [настройке и устранению неполадок Netdisco](https://github.com/netdisco/netdisco/wiki/Troubleshooting), [советами и рекомендациями для конкретных платформ](https://github.com/netdisco/netdisco/wiki/Vendor-Tips), а [также всеми вариантами конфигурации](https://github.com/netdisco/netdisco/wiki/Configuration).
 
 You can also speak to someone in the [`#netdisco@libera`](https://kiwiirc.com/nextclient/irc.libera.chat/netdisco) IRC channel, or on the [community email list](https://lists.sourceforge.net/lists/listinfo/netdisco-users).
 
