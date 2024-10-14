@@ -55,14 +55,15 @@ Other username, password, database connection, and file locations, can all be se
 
 У нас есть несколько других страниц с советами по [настройке и устранению неполадок Netdisco](https://github.com/netdisco/netdisco/wiki/Troubleshooting), [советами и рекомендациями для конкретных платформ](https://github.com/netdisco/netdisco/wiki/Vendor-Tips), а [также всеми вариантами конфигурации](https://github.com/netdisco/netdisco/wiki/Configuration).
 
-You can also speak to someone in the [`#netdisco@libera`](https://kiwiirc.com/nextclient/irc.libera.chat/netdisco) IRC channel, or on the [community email list](https://lists.sourceforge.net/lists/listinfo/netdisco-users).
+Вы также можете поговорить с кем-нибудь на IRC-канале [`#netdisco@libera`](https://kiwiirc.com/nextclient/irc.libera.chat/netdisco) или в [списке рассылки электронной почты](https://lists.sourceforge.net/lists/listinfo/netdisco-users) сообщества.
 
-## Upgrading
+## Обновление
 
-Pulling new images and recreating the containers with `docker-compose down ; docker-compose pull ; docker-compose up --force-recreate` is all there is to it. When our database image starts it always updates the DB schema to the latest release. To upgrade your own PostgreSQL database, run:
+Загрузите новый образов и пересоздайте контейнер с помощью команд ёdocker-compose down; docker-compose pull ; docker-compose up --force-recreateё — это все, что нужно. Когда наш образ базы данных запускается, он всегда обновляет схему БД до последней версии. Чтобы обновить собственную базу данных PostgreSQL, выполните:
 
     docker-compose run --entrypoint=bin/netdisco-db-deploy netdisco-backend
 
-## Credits
+## Благодарности
 
-Thanks to Ira W. Snyder and LBegnaud for inspiration. Thanks also to the PostgreSQL project for great examples of docker magic. We build with the support of the excellent GitHub Actions service. 
+Спасибо Айре Снайдеру и ЛБеньо за вдохновение. Спасибо также проекту PostgreSQL за отличные примеры магии докера. Мы создаем при поддержке отличного сервиса GitHub Actions.
+
