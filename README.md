@@ -46,7 +46,7 @@ Other username, password, database connection, and file locations, can all be se
 
 Другое имя пользователя, пароль, подключение к базе данных и расположение файлов можно установить с помощью переменных среды, [описанных в нашей вики](https://github.com/netdisco/netdisco/wiki/Environment-Variables). Конечно, контейнер базы данных не является обязательным, и вместо этого вы можете подключиться к существующему или внешнему серверу PostgreSQL.
 
-##  Docker Requirements
+##  Рекомендованная версия Docker и docker-compos
 
  * Docker 20.10.0 (Linux) or Docker Desktop 3.3.0 (Win/Mac) 
  * docker-compose 1.28
