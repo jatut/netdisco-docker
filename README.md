@@ -2,29 +2,28 @@
 [![Build Status](https://travis-ci.org/netdisco/netdisco.svg?branch=master)](https://travis-ci.org/netdisco/netdisco)
 [![Docker Image](https://img.shields.io/badge/docker%20images-ready-blue.svg)](https://store.docker.com/community/images/netdisco/netdisco)
 
-**Netdisco** 
-Netdisco это веб-инструмент управления сетью, подходящий как для небольших, так и для очень больших сетей. Данные об IP- и MAC-адресах собираются в базу данных PostgreSQL с помощью SNMP, CLI или API-интерфейсов устройств. Некоторые вещи, которые вы можете делать с Netdisco:
+**Netdisco** - это веб-инструмент управления сетью, подходящий как для небольших, так и для очень больших сетей. Данные об IP- и MAC-адресах собираются в базу данных PostgreSQL с помощью SNMP, CLI или API-интерфейсов устройств. Некоторые вещи, которые вы можете делать с Netdisco:
 
-* Locate a machine on the network by MAC or IP and show the switch port it lives at
-* Turn off a switch port, or change the VLAN or PoE status of a port
-* Inventory your network hardware by model, vendor, software and operating system
-* Pretty pictures of your network
+* Найти машину в сети по MAC или IP и укажите порт коммутатора, на котором она находится.
+* Выключить порт коммутатора или измените статус VLAN или PoE порта.
+* Провести инвентаризацию сетевого оборудования по модели, поставщику, программному обеспечению и операционной системе.
+* Красивые фотографии вашей сети
 
-See the demo at: [https://netdisco2-demo.herokuapp.com/](https://netdisco2-demo.herokuapp.com/)
+Посмотрите демо-версию по адресу: [https://netdisco2-demo.herokuapp.com/](https://netdisco2-demo.herokuapp.com/)
 
-Netdisco includes a lightweight web server for the interface, a backend daemon to gather data from your network, and a command line interface for troubleshooting. There is a simple configuration file in YAML format. 
+**Netdisco** включает в себя легкий веб-сервер для интерфейса, серверный демон для сбора данных из вашей сети и интерфейс командной строки для устранения неполадок. Существует простой файл конфигурации в формате YAML.
 
 ##  Docker Deployment
 
-The containers need some directories present in the mounted volume. In a directory of your choice, create this structure and allow the netdisco uid in the container (901) to write into it:
+Контейнерам нужны некоторые каталоги, присутствующие в смонтированном томе. В каталоге по вашему выбору создайте эту структуру и разрешите uid netdisco в контейнере (901) записывать в нее:
 
     cd $directory_of_your_choice
     mkdir -p netdisco/{logs,config,nd-site-local} 
     sudo chown -R 901:901 netdisco
 
-*(this step is necessary on Linux hosts and can be omitted in the OS X and Windows versions of Docker)*
+*(этот шаг необходим на хостах Linux и может быть пропущен в версиях Docker для OS X и Windows)*
 
-Download docker-compose.yml into the same directory and start everything 
+Загрузите docker-compose.yml в нужный и запустите его.
 
     curl -Ls -o docker-compose.yml https://tinyurl.com/nd2-dockercompose
     docker-compose up
