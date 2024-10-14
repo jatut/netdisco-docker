@@ -28,19 +28,23 @@
     curl -Ls -o docker-compose.yml https://tinyurl.com/nd2-dockercompose
     docker-compose up
 
-This will start the database, backend daemon, and web frontend listening on port 5000. If you have a device using the SNMP community `public`, enter it in the Netdisco homepage and click "Discover".
+Это запустит базу данных, внутренний демон и веб-интерфейс, прослушивающий порт 5000. Если у вас есть устройство, использующее общедоступное сообщество SNMP, отличное от `public`, введите его на домашней странице Netdisco и нажмите  "Discover"(Обнаружить).
 
 The default configuration is available in `netdisco/config/deployment.yml`. The backend and web daemons will automatically restart when you save changes to this file. Logs are available in `netdisco/logs/`.
 
-The [netdisco-do](https://metacpan.org/dist/App-Netdisco/view/bin/netdisco-do) utility can be run like this (run it without `<action>` to get help):
+Конфигурация по умолчанию доступна в `netdisco/config/deployment.yml`. Серверная часть и веб-демоны автоматически перезапустятся, когда вы сохраните изменения в этом файле. Журналы доступны в `netdisco/logs/`.
+
+Утилита [netdisco-do](https://metacpan.org/dist/App-Netdisco/view/bin/netdisco-do) может быть запущена следующим образом (запустите ее без `<action>`, чтобы получить помощь):
 
     docker-compose run netdisco-do <action>
 
-Local web or backend plugins can be installed into `netdisco/nd-site-local/` as per [our documentation](https://github.com/netdisco/netdisco/wiki). Finally, the PostgreSQL data files are stored in `netdisco/pgdata/` and we do not advise touching them (unless you wish to reinitialize the system).
+Локальные веб-плагины или внутренние плагины можно установить в `netdisco/nd-site-local/` согласно [нашей документации](https://github.com/netdisco/netdisco/wiki). Наконец, файлы данных PostgreSQL хранятся в `netdisco/pgdata/`, и мы не советуем их трогать (если только вы не хотите повторно инициализировать систему).
 
-The web frontend is initally configured to allow unauthenticated access with full admin rights. We suggest you visit the `Admin -> User Management` menu item, and set `no_auth: false` in `deployment.yml`, to remove this guest account and set up authenticated user access.
+Веб-интерфейс изначально настроен на разрешение доступа без аутентификации с полными правами администратора. Мы предлагаем вам посетить пункт меню `Admin -> User Management(«Администратор» -> «Управление пользователями»)` и установить `no_auth: false` в файле `deployment.yml`, чтобы удалить эту гостевую учетную запись и настроить доступ для аутентифицированных пользователей.
 
 Other username, password, database connection, and file locations, can all be set using [environment variables](https://github.com/netdisco/netdisco/wiki/Environment-Variables) described in our wiki. Of course the database container is optional and you can connect to an existing or external PostgreSQL server instead.
+
+Другое имя пользователя, пароль, подключение к базе данных и расположение файлов можно установить с помощью переменных среды, [описанных в нашей вики](https://github.com/netdisco/netdisco/wiki/Environment-Variables). Конечно, контейнер базы данных не является обязательным, и вместо этого вы можете подключиться к существующему или внешнему серверу PostgreSQL.
 
 ##  Docker Requirements
 
