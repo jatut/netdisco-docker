@@ -4,16 +4,16 @@ services:
     image: netdisco/netdisco:latest-postgresql
     hostname: netdisco-postgresql
     volumes:
-      - "./netdisco/pgdata:/var/lib/postgresql/data"
+      - "/opt/netdisco/pgdata:/var/lib/postgresql/data"
       
   netdisco-backend:
     image: netdisco/netdisco:latest-backend
     hostname: netdisco-backend
     init: true
     volumes:
-      - "./netdisco/nd-site-local:/home/netdisco/nd-site-local"
-      - "./netdisco/config:/home/netdisco/environments"
-      - "./netdisco/logs:/home/netdisco/logs"
+      - "/opt/netdisco/nd-site-local:/home/netdisco/nd-site-local"
+      - "/opt/netdisco/config:/home/netdisco/environments"
+      - "/opt/netdisco/logs:/home/netdisco/logs"
     environment:
       NETDISCO_DOMAIN:  discover
       NETDISCO_DB_HOST: netdisco-postgresql
@@ -32,8 +32,8 @@ services:
     hostname: netdisco-web
     init: true
     volumes:
-      - "./netdisco/nd-site-local:/home/netdisco/nd-site-local"
-      - "./netdisco/config:/home/netdisco/environments"
+      - "/opt/netdisco/nd-site-local:/home/netdisco/nd-site-local"
+      - "/opt/netdisco/config:/home/netdisco/environments"
     environment:
       NETDISCO_DOMAIN:  discover
       NETDISCO_DB_HOST: netdisco-postgresql
@@ -55,8 +55,8 @@ services:
     # use same hostname as backend to satisfy skiplist check (#68)
     hostname: netdisco-backend
     volumes:
-      - "./netdisco/nd-site-local:/home/netdisco/nd-site-local"
-      - "./netdisco/config:/home/netdisco/environments"
+      - "/opt/netdisco/nd-site-local:/home/netdisco/nd-site-local"
+      - "/opt/netdisco/config:/home/netdisco/environments"
     environment:
       NETDISCO_DOMAIN:  discover
       NETDISCO_DB_HOST: netdisco-postgresql
