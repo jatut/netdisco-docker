@@ -2,7 +2,8 @@
 [![Build Status](https://travis-ci.org/netdisco/netdisco.svg?branch=master)](https://travis-ci.org/netdisco/netdisco)
 [![Docker Image](https://img.shields.io/badge/docker%20images-ready-blue.svg)](https://store.docker.com/community/images/netdisco/netdisco)
 
-**Netdisco** is a web-based network management tool suitable for small to very large networks. IP and MAC address data is collected into a PostgreSQL database using SNMP, CLI, or device APIs. Some of the things you can do with Netdisco:
+**Netdisco** 
+Netdisco это веб-инструмент управления сетью, подходящий как для небольших, так и для очень больших сетей. Данные об IP- и MAC-адресах собираются в базу данных PostgreSQL с помощью SNMP, CLI или API-интерфейсов устройств. Некоторые вещи, которые вы можете делать с Netdisco:
 
 * Locate a machine on the network by MAC or IP and show the switch port it lives at
 * Turn off a switch port, or change the VLAN or PoE status of a port
